@@ -1,0 +1,87 @@
+.header {
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 2px 2px -2px #d0d0d0;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.nav {
+  display: flex;
+  gap: 42px;
+}
+
+.logo {
+  text-decoration-line: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 42px;
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+.navItem {
+  gap: 24px;
+}
+
+.navLink:visited {
+  color: #000;
+}
+
+.logoImage {
+  max-width: 100%;
+}
+
+.authButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.loginButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d0d0;
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.loginButton:hover {
+  border-color: #9e9e9e;
+}
+
+.signupButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #e7e7e7;
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.signupButton:hover {
+  background-color: #c7c7c7;
+}
