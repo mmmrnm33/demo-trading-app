@@ -1,3 +1,4 @@
+import MarketTicker from "../../components/MarketTicker/MarketTicker";
 import styles from "./HomePage.module.css";
 
 import { Link } from "react-router-dom";
@@ -16,6 +17,7 @@ const HomePage = () => {
         </Link>
       </section>
       <section className={styles.secondSection}></section>
+      <MarketTicker />
     </>
   );
 };
