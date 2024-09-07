@@ -7,15 +7,29 @@ const webSocketSlice = createSlice({
   },
   reducers: {
     updateData: (state, action) => {
-      const { code, trade_price, change_rate } = action.payload;
-      state.data[code] = { trade_price, change_rate };
-    },
-    clearData: (state) => {
-      state.data = {};
+      const {
+        code,
+        change,
+        change_rate,
+        timestamp,
+        opening_price,
+        high_price,
+        low_price,
+        trade_price,
+      } = action.payload;
+      state.data[code] = {
+        change,
+        change_rate,
+        timestamp,
+        opening_price,
+        high_price,
+        low_price,
+        trade_price,
+      };
     },
   },
 });
 
-export const { updateData, clearData } = webSocketSlice.actions;
+export const { updateData } = webSocketSlice.actions;
 
 export default webSocketSlice.reducer;

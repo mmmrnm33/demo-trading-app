@@ -1,8 +1,10 @@
 import { updateData } from "../features/Markets/Markets";
 import { store } from "../app/store";
 
-export const createUpbitWebSocket = () => {
-  const ws = new WebSocket("wss://api.upbit.com/websocket/v1");
+let ws = null;
+
+export const connectWebSocket = () => {
+  ws = new WebSocket("wss://api.upbit.com/websocket/v1");
 
   ws.onopen = () => {
     console.log("웹소켓 연결 성공");
@@ -43,6 +45,7 @@ export const createUpbitWebSocket = () => {
 
   ws.onclose = () => {
     console.log("웹소켓 연결 종료");
+    ws = null;
   };
 
   ws.onerror = (error) => {

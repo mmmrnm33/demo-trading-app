@@ -1,21 +1,8 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createUpbitWebSocket } from "../../services/websocket";
-import { clearData } from "../../features/Markets/Markets";
+import { useSelector } from "react-redux";
 import styles from "./MarketTicker.module.css";
 
 const MarketTicker = () => {
-  const dispatch = useDispatch();
   const marketData = useSelector((state) => state.webSocket.data);
-
-  useEffect(() => {
-    const ws = createUpbitWebSocket();
-
-    return () => {
-      ws.close();
-      dispatch(clearData());
-    };
-  }, [dispatch]);
 
   return (
     <div>
@@ -24,7 +11,7 @@ const MarketTicker = () => {
           const { trade_price, change_rate, change } = marketData[coin];
 
           const percentageStyle = change === "RISE" ? styles.rise : styles.fall;
-          const percentageSign = change > 0 ? "+" : "-";
+          const percentageSign = change === "RISE" ? "+" : "-";
 
           return (
             <li key={coin} className={styles.coin}>
