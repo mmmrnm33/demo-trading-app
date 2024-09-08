@@ -11,7 +11,7 @@ const Header = ({ children }) => {
           </Link>
           <ul className={styles.list}>
             <li className={styles.navItem}>
-              <Link to="/trade" className={styles.navLink}>
+              <Link to="/trade/KRW-BTC" className={styles.navLink}>
                 거래소
               </Link>
             </li>

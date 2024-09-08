@@ -1,0 +1,46 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  border-bottom: 1px solid #000;
+  margin-top: 6px;
+  padding-left: 6px;
+}
+
+.button {
+  border: 1px solid #000;
+  border-bottom: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #fff;
+  padding: 2px 4px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.code {
+  font-size: 10px;
+  color: #666;
+}
+
+.rise {
+  font-size: 10px;
+  color: #00ae00;
+}
+
+.fall {
+  font-size: 10px;
+  color: #c30101;
+}
+
+.active {
+  background-color: #e5e5e5;
+  font-weight: 600;
+}

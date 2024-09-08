@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/trade",
+    path: "/trade/:coinId",
     element: (
       <Header>
         <TradePage />
