@@ -30,6 +30,6 @@ const webSocketSlice = createSlice({
   },
 });
 
-export const { updateData } = webSocketSlice.actions;
+export const { updateData, clearData } = webSocketSlice.actions;
 
 export default webSocketSlice.reducer;

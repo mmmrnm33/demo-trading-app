@@ -2,15 +2,16 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCoin } from "../../features/Coin/Coin";
-// import CandleChart from "../../components/CandleChart/CandleChart";
+
 import NavButtons from "../../components/NavButtons/NavButtons";
+import CandleChart from "../../components/CandleChart/CandleChart";
 
 const TradePage = () => {
   const { coinId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const selectedCoin = useSelector((state) => state.coin.selectedCoin);
+  const selectedCoin = useSelector((state) => state.coin.selectedCoin);
   const marketData = useSelector((state) => state.webSocket.data);
 
   useEffect(() => {
@@ -39,8 +40,9 @@ const TradePage = () => {
         coins={coins}
         marketData={marketData}
         handleCoinChange={handleCoinChange}
+        selectedCoin={selectedCoin}
       />
-      {/* <CandleChart coin={selectedCoin} /> */}
+      <CandleChart coin={selectedCoin} />
     </div>
   );
 };

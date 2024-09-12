@@ -1,15 +1,6 @@
-import { useLocation } from "react-router-dom";
 import styles from "./NavButtons.module.css";
-import { useEffect } from "react";
 
-const NavButtons = ({ coins, marketData, handleCoinChange }) => {
-  const location = useLocation();
-  const currentCoin = location.pathname.split("/").pop();
-
-  useEffect(() => {
-    console.log("Current Coin on initial render:", currentCoin);
-  }, [currentCoin]);
-
+const NavButtons = ({ coins, marketData, handleCoinChange, selectedCoin }) => {
   return (
     <nav className={styles.nav}>
       {coins.map((coin) => {
@@ -17,7 +8,7 @@ const NavButtons = ({ coins, marketData, handleCoinChange }) => {
         const percentageStyle =
           coinData?.change === "RISE" ? styles.rise : styles.fall;
         const percentageSign = coinData?.change === "RISE" ? "+" : "-";
-        const isActive = coin.code === currentCoin ? styles.active : "";
+        const isActive = coin.code === selectedCoin ? styles.active : "";
 
         return (
           <button
