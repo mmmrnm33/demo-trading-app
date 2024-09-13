@@ -1,0 +1,10 @@
+.tradeContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightSection {
+  padding: 10px;
+  border-left: 1px solid black;
+  min-width: 340px;
+}

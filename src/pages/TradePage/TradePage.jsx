@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCoin } from "../../features/Coin/Coin";
+import styles from "./TradePage.module.css";
 
 import NavButtons from "../../components/NavButtons/NavButtons";
 import CandleChart from "../../components/CandleChart/CandleChart";
+import TradePanel from "../../components/TradePanel/TradePanel";
 
 const TradePage = () => {
   const { coinId } = useParams();
@@ -35,14 +37,19 @@ const TradePage = () => {
   ];
 
   return (
-    <div>
-      <NavButtons
-        coins={coins}
-        marketData={marketData}
-        handleCoinChange={handleCoinChange}
-        selectedCoin={selectedCoin}
-      />
-      <CandleChart coin={selectedCoin} />
+    <div className={styles.tradeContainer}>
+      <div className={styles.leftSection}>
+        <NavButtons
+          coins={coins}
+          marketData={marketData}
+          handleCoinChange={handleCoinChange}
+          selectedCoin={selectedCoin}
+        />
+        <CandleChart coin={selectedCoin} />
+      </div>
+      <div className={styles.rightSection}>
+        <TradePanel />
+      </div>
     </div>
   );
 };
