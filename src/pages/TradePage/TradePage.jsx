@@ -7,6 +7,7 @@ import styles from "./TradePage.module.css";
 import NavButtons from "../../components/NavButtons/NavButtons";
 import CandleChart from "../../components/CandleChart/CandleChart";
 import TradePanel from "../../components/TradePanel/TradePanel";
+import CoinInfoPanel from "../../components/CoinInfoPanel/CoinInfoPanel";
 
 const TradePage = () => {
   const { coinId } = useParams();
@@ -48,6 +49,7 @@ const TradePage = () => {
         <CandleChart coin={selectedCoin} />
       </div>
       <div className={styles.rightSection}>
+        <CoinInfoPanel />
         <TradePanel />
       </div>
     </div>

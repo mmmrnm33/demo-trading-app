@@ -1,0 +1,34 @@
+.coinInfoPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.coinName {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.priceRise {
+  font-size: 24px;
+  color: #00ae00;
+  font-weight: 600;
+}
+
+.priceFall {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.rateRise {
+  font-size: 16px;
+  color: #00ae00;
+}
+
+.rateFall {
+  font-size: 16px;
+  color: #c30101;
+}
