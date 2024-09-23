@@ -12,7 +12,7 @@ const HomePage = () => {
           실제 거래에 앞서 데모 계정에서 가상 자금을 활용하여 거래 경험을 쌓고
           전략을 테스트해보세요
         </p>
-        <Link to="/" className={styles.link}>
+        <Link to="/signup" className={styles.link}>
           데모 계정으로 시작하기
         </Link>
       </section>

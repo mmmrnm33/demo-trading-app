@@ -26,7 +26,7 @@ const Header = ({ children }) => {
           <Link to="/" className={styles.loginButton}>
             로그인
           </Link>
-          <Link to="/" className={styles.signupButton}>
+          <Link to="/signup" className={styles.signupButton}>
             회원가입
           </Link>
         </div>
