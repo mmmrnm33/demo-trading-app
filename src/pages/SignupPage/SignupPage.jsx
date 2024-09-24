@@ -1,7 +1,9 @@
 import styles from "./SignupPage.module.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,8 @@ const SignUpPage = () => {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,14 +36,24 @@ const SignUpPage = () => {
     }
 
     try {
-      await createUserWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email,
         formData.password
       );
+
+      await setDoc(doc(db, "users", userCredential.user.uid), {
+        email: formData.email,
+        nickname: formData.nickname,
+        initialBalance: parseInt(formData.initialBalance, 10),
+      });
+
       setSuccess("회원가입이 완료되었습니다.");
       setError("");
-      console.log(formData);
+
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
     } catch (error) {
       setError(error.message);
       setSuccess("");
