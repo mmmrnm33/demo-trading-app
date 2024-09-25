@@ -85,3 +85,42 @@
 .signupButton:hover {
   background-color: #c7c7c7;
 }
+
+.userInfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profileIcon {
+  font-size: 24px;
+  color: #444;
+}
+
+.profileIcon:hover {
+  color: #000;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdownItem:hover {
+  font-weight: 600;
+}
