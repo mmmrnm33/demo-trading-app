@@ -9,6 +9,7 @@ const Header = ({ children }) => {
   const [user, setUser] = useState(null);
   const [nickname, setNickname] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const db = getFirestore();
 
@@ -26,6 +27,7 @@ const Header = ({ children }) => {
         setUser(null);
         setNickname("");
       }
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -39,6 +41,10 @@ const Header = ({ children }) => {
     auth.signOut();
     setShowDropdown(false);
   };
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <>
