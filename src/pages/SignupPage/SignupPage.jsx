@@ -11,7 +11,7 @@ const SignUpPage = () => {
     nickname: "",
     password: "",
     confirmPassword: "",
-    initialBalance: 1000000,
+    balance: 1000000,
   });
 
   const [error, setError] = useState("");
@@ -45,7 +45,7 @@ const SignUpPage = () => {
       await setDoc(doc(db, "users", userCredential.user.uid), {
         email: formData.email,
         nickname: formData.nickname,
-        initialBalance: parseInt(formData.initialBalance, 10),
+        balance: parseInt(formData.balance, 10),
       });
 
       setSuccess("회원가입이 완료되었습니다.");
@@ -120,8 +120,8 @@ const SignUpPage = () => {
               <span>초기 자금</span>
               <select
                 className={styles.select}
-                name="initialBalance"
-                value={formData.initialBalance}
+                name="balance"
+                value={formData.balance}
                 onChange={handleChange}
                 required
               >

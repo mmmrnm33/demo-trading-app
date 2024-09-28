@@ -8,6 +8,7 @@ import NavButtons from "../../components/NavButtons/NavButtons";
 import CandleChart from "../../components/CandleChart/CandleChart";
 import TradePanel from "../../components/TradePanel/TradePanel";
 import CoinInfoPanel from "../../components/CoinInfoPanel/CoinInfoPanel";
+import AssetsOverview from "../../components/AssetsOverview/AssetsOverview";
 
 const TradePage = () => {
   const { coinId } = useParams();
@@ -39,18 +40,23 @@ const TradePage = () => {
 
   return (
     <div className={styles.tradeContainer}>
-      <div className={styles.leftSection}>
-        <NavButtons
-          coins={coins}
-          marketData={marketData}
-          handleCoinChange={handleCoinChange}
-          selectedCoin={selectedCoin}
-        />
-        <CandleChart coin={selectedCoin} />
+      <div className={styles.topSection}>
+        <div className={styles.chartSection}>
+          <NavButtons
+            coins={coins}
+            marketData={marketData}
+            handleCoinChange={handleCoinChange}
+            selectedCoin={selectedCoin}
+          />
+          <CandleChart coin={selectedCoin} />
+        </div>
+        <div className={styles.tradeSection}>
+          <CoinInfoPanel />
+          <TradePanel />
+        </div>
       </div>
-      <div className={styles.rightSection}>
-        <CoinInfoPanel />
-        <TradePanel />
+      <div className={styles.bottomSection}>
+        <AssetsOverview />
       </div>
     </div>
   );
