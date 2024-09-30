@@ -1,6 +1,7 @@
 .assetsOverview {
   border-top: 1px solid #000;
   padding: 8px 12px;
+  text-align: right;
 }
 
 .balance {
